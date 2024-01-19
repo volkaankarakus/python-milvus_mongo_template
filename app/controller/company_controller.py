@@ -27,6 +27,8 @@ class CompanyController:
     async def get_company_by_id(self, company_id: str) -> Company:
         result = self.collection.find_one({"_id": ObjectId(company_id)})
         if result:
+            # MongoDB'den dönen ObjectId'yi string'e dönüştür
+            result['_id'] = str(result['_id'])
             return Company(**result)
         else:
             return None
@@ -69,4 +71,5 @@ class CompanyController:
     # Get Companies (No need to enclose it in a try-except block)
     async def get_all_companies(self) -> List[Company]:
         companies = self.collection.find()
-        return [Company(**company) for company in companies]
+        # MongoDB'den dönen her belgenin _id alanını string'e çevir
+        return [Company(**{**company, '_id': str(company['_id'])}) for company in companies]

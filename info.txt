@@ -13,7 +13,7 @@ You can install the libraries required for your project using pip. For example, 
 It is a good practice to list the libraries you have installed in a requirements.txt file.
  This file shows what dependencies others need to install when they clone your project.
   You can save dependencies in this file like this:
-** pip freeze > requirements.txt **
+** pip3 freeze > requirements.txt **
 
 
 To run this project, you can use the following command in your terminal:
