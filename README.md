@@ -41,3 +41,17 @@ Create a "requirements.txt" file containing the relevant dependencies.
 - main.py
 - requirements.txt
 - app/
+
+## Deploy to Google Cloud Functions
+
+To deploy to Google Cloud Functions, use the following command:
+```
+gcloud functions deploy (google_cloud_function_name)   --runtime python310   --trigger-http   --allow-unauthenticated   --entry-point main   --project (your-project-id)   --region us-central1
+```
+
+## Deploy to Google Cloud Functions
+
+To deploy to Google Cloud Functions, use the following command:
+```
+gcloud functions deploy (google_cloud_function_name)   --runtime python310   --trigger-http   --allow-unauthenticated   --entry-point main   --project (your-project-id)   --region us-central1
+```
